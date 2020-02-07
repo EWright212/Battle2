@@ -20,16 +20,12 @@ class Battle < Sinatra::Base
   
   get '/play' do
     @game = $game
-    @player_1 = @game.player_1
-    @player_2 = @game.player_2
     erb :play
   end
 
   get '/attack' do
     @game = $game
-    @player_1 = @game.player_1
-    @player_2 = @game.player_2
-    @game.attack(@player_2)
+    @game.attack(@game.player_2)
     erb :attack
   end
   #  start the server if the ruby file executed properly
